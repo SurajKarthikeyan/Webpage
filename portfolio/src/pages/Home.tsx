@@ -69,7 +69,7 @@ export default function Home() {
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map(project => (
           <a key={project.id} href={`/projects/${project.id}`} className="group border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-colors">
-            <div className="h-72 overflow-hidden">
+            <div className="h-128 overflow-hidden">
               {project.thumbnail ? (
                 <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               ) : (

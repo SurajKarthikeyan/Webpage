@@ -34,7 +34,7 @@ export const projects: Project[] = [
     engine: 'Unity',
     award: 'Best Overall — MSU Spring Game Showcase 2024',
     itchLink: 'https://kaeyuhhh.itch.io/wizards-and-rhymes',
-    overview: 'Your overview paragraph here.',
+    overview: 'Wizards & Rhymes was developed over 4 months as part of Michigan State University\'s Game Design and Development program, ultimately winning Best Overall at the 2024 Spring Game Showcase. As Systems Engineer, I was responsible for designing and integrating the core systems for the ice and lightning puzzle, as well as owning the entire audio pipeline through Wwise middleware. Working in a team of 10, I focused on building designer-friendly systems that gave the team the freedom to create and iterate quickly without needing to touch code.',
     thumbnail: '/wizards-and-rhymes/MainBanner.jpg',
     heroBanner: '/wizards-and-rhymes/MainBanner.jpg',
     contributions: [

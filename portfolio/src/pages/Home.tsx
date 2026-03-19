@@ -11,7 +11,7 @@ export default function Home() {
         <h1 className="text-5xl md:text-7xl font-medium leading-tight mb-6">
           Suraj<br />Karthikeyan.
         </h1>
-        <p className="text-white/50 text-lg max-w-lg leading-relaxed mb-8">
+        <p className="text-white/50 text-x1 max-w-lg leading-relaxed mb-8">
           Building immersive experiences and robust systems — from VR medical simulations to audio plugins.
         </p>
         <div className="flex gap-4">
@@ -30,7 +30,7 @@ export default function Home() {
         <p className="text-white/40 text-sm uppercase tracking-widest mb-8">About</p>
         <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <p className="text-white/70 text-lg leading-relaxed">
+            <p className="text-white/70 text-x1 leading-relaxed">
               CS grad student at Michigan State University pursuing an MSc in Computer Science, with a minor in Game Design and Development. I specialise in systems engineering, game development, and audio integration.
             </p>
             <p className="text-white/50 text-base leading-relaxed mt-4">

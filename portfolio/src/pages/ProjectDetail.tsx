@@ -85,7 +85,7 @@ export default function ProjectDetail() {
       {/* Overview */}
       <section className="px-8 md:px-20 py-16 border-b border-white/10">
         <p className="text-white/40 text-sm uppercase tracking-widest mb-6">Overview</p>
-        <p className="text-white/70 text-lg leading-relaxed max-w-3xl">{project.overview}</p>
+        <p className="text-white/70 text-x1 leading-relaxed max-w-3xl">{project.overview}</p>
       </section>
 
       {/* Technical Contributions */}
@@ -96,7 +96,7 @@ export default function ProjectDetail() {
             <div key={index} className="grid md:grid-cols-2 gap-12 items-start">
               <div>
                 <h3 className="text-xl font-medium mb-4">{contribution.title}</h3>
-                <p className="text-white/50 leading-relaxed">{contribution.description}</p>
+                <p className="text-white/50 text-lg leading-relaxed">{contribution.description}</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {contribution.images.length > 0 ? (

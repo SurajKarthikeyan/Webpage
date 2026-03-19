@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar'
-
+import { projects } from '../data/projects'
 export default function Home() {
   return (
     <div className="bg-black min-h-screen text-white">
@@ -63,27 +63,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects */}
-      <section id="projects" className="px-8 md:px-20 py-24 border-t border-white/10">
-        <p className="text-white/40 text-sm uppercase tracking-widest mb-8">Projects</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <a href="/projects/wizards-and-rhymes" className="group border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-colors">
-            <div className="h-48 bg-white/5 flex items-center justify-center">
-              <p className="text-white/20 text-sm">Wizards & Rhymes</p>
+    {/* Projects */}
+    <section id="projects" className="px-8 md:px-20 py-24 border-t border-white/10">
+      <p className="text-white/40 text-sm uppercase tracking-widest mb-8">Projects</p>
+      <div className="grid md:grid-cols-2 gap-6">
+        {projects.map(project => (
+          <a key={project.id} href={`/projects/${project.id}`} className="group border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-colors">
+            <div className="h-48 overflow-hidden">
+              {project.thumbnail ? (
+                <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              ) : (
+                <div className="w-full h-full bg-white/5 flex items-center justify-center">
+                  <p className="text-white/20 text-sm">{project.title}</p>
+                </div>
+              )}
             </div>
             <div className="p-6">
-              <div className="flex gap-2 mb-3">
-                <span className="text-xs px-3 py-1 rounded-full bg-purple-900/50 text-purple-300">Game</span>
-                <span className="text-xs px-3 py-1 rounded-full bg-white/5 text-white/50">Unity</span>
-                <span className="text-xs px-3 py-1 rounded-full bg-white/5 text-white/50">Wwise</span>
+              <div className="flex gap-2 mb-3 flex-wrap">
+                {project.tags.map(tag => (
+                  <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/5 text-white/50 border border-white/10">{tag}</span>
+                ))}
               </div>
-              <h3 className="text-white font-medium mb-2">Wizards & Rhymes</h3>
-              <p className="text-white/40 text-sm leading-relaxed">3D isometric puzzle adventure — Systems Engineer & Audio Integration</p>
+              <h3 className="text-white font-medium mb-2">{project.title}</h3>
+              <p className="text-white/40 text-sm leading-relaxed">{project.subtitle}</p>
               <p className="text-white/20 text-xs mt-4 group-hover:text-white/40 transition-colors">View project →</p>
             </div>
           </a>
-        </div>
-      </section>
+        ))}
+      </div>
+    </section>
 
       {/* Skills */}
       <section id="skills" className="px-8 md:px-20 py-24 border-t border-white/10">

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: '#F5F0E8' }} className="min-h-screen" style={{ color: '#1C1C1C' }}>
+    <div style={{ backgroundColor: '#F5F0E8', color: '#1C1C1C' }} className="min-h-screen">
       <Navbar />
 
       {/* Hero */}

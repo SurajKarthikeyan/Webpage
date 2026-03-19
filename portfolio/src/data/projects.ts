@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   title: string;
@@ -19,10 +20,24 @@ export interface Project {
     description: string;
     images: string[];
   }[];
+  themeColor: {
+  accent: string;
+  accentMuted: string;
+  tag: string;
+  tagText: string;
+}
 }
 
 export const projects: Project[] = [
   {
+
+    themeColor: {
+      accent: '#7F77DD',
+      accentMuted: '#EEEDFE',
+      tag: '#EEEDFE',
+      tagText: '#3C3489',
+    },
+    
     id: 'wizards-and-rhymes',
     title: 'Wizards & Rhymes',
     subtitle: 'A 3D isometric puzzle adventure where you play a wizard battling in an epic fantasy rap battle to claim the title of Wizard of all Rhymes.',
@@ -65,3 +80,4 @@ export const projects: Project[] = [
     ],
   },
 ]
+

@@ -35,23 +35,32 @@ export const projects: Project[] = [
     award: 'Best Overall — MSU Spring Game Showcase 2024',
     itchLink: 'https://kaeyuhhh.itch.io/wizards-and-rhymes',
     overview: 'Your overview paragraph here.',
-    thumbnail: '',
-    heroBanner: '',
+    thumbnail: '/wizards-and-rhymes/MainBanner.jpg',
+    heroBanner: '/wizards-and-rhymes/MainBanner.jpg',
     contributions: [
       {
         title: 'Ice puzzle system',
         description: 'Designed and implemented a grid-based ice movement system where the player slides and collides with blocks that either move or stop them. Built to be designer-friendly so the team could rapidly create and iterate on puzzle layouts without touching code.',
-        images: [],
+        images: [
+          '/wizards-and-rhymes/IcePuzzle1Gif.gif',
+          '/wizards-and-rhymes/IcePuzzle2GIF.gif',
+        ],
       },
       {
         title: 'Lightning puzzle system',
         description: 'Built four interlocking mechanics — Lever, Push Block, Electro Block, and Pressure Plate — and integrated them into a unified system, giving designers a clean toolkit to create obstacle-based puzzles without dependency conflicts between subsystems.',
-        images: [],
+        images: [
+          '/wizards-and-rhymes/LightningPuzzle1Gif.gif',
+          '/wizards-and-rhymes/LightningPuzzle2Gif.gif',
+        ],
       },
       {
         title: 'Audio integration & Wwise',
         description: 'Owned all audio integration across the project using Wwise middleware. Set up dynamic music transitions tied to level progression, and built an event-driven beat reaction system that let objects and decals pulse in sync with the music.',
-        images: [],
+        images: [
+          '/wizards-and-rhymes/WWiseGIF.gif',
+          '/wizards-and-rhymes/DecalGif.gif',
+        ],
       },
     ],
   },

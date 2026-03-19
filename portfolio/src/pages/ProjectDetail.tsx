@@ -25,9 +25,13 @@ export default function ProjectDetail() {
       <section className="pt-32 px-8 md:px-20 pb-16 border-b border-white/10">
         <Link to="/" className="text-white/40 hover:text-white text-sm transition-colors mb-8 inline-block">← All projects</Link>
 
-        <div className="h-64 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10">
-          <p className="text-white/20 text-sm">Hero banner / GIF</p>
-        </div>
+        {project.heroBanner ? (
+          <img src={project.heroBanner} alt={project.title} className="w-full h-64 object-cover rounded-xl mb-8" />
+        ) : (
+          <div className="h-64 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10">
+            <p className="text-white/20 text-sm">Hero banner / GIF</p>
+          </div>
+        )}
 
         {project.award && (
           <div className="inline-flex items-center gap-2 bg-amber-900/30 border border-amber-700/30 rounded-full px-4 py-2 mb-6">
@@ -84,40 +88,38 @@ export default function ProjectDetail() {
         <p className="text-white/70 text-lg leading-relaxed max-w-3xl">{project.overview}</p>
       </section>
 
-
-        {/* Technical Contributions */}
-    <section className="px-8 md:px-20 py-16 border-b border-white/10">
-    <p className="text-white/40 text-sm uppercase tracking-widest mb-12">Technical Contributions</p>
-    <div className="space-y-16">
-        {project.contributions.map((contribution, index) => (
-        <div key={index} className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
-            <h3 className="text-xl font-medium mb-4">{contribution.title}</h3>
-            <p className="text-white/50 leading-relaxed">{contribution.description}</p>
+      {/* Technical Contributions */}
+      <section className="px-8 md:px-20 py-16 border-b border-white/10">
+        <p className="text-white/40 text-sm uppercase tracking-widest mb-12">Technical Contributions</p>
+        <div className="space-y-16">
+          {project.contributions.map((contribution, index) => (
+            <div key={index} className="grid md:grid-cols-2 gap-12 items-start">
+              <div>
+                <h3 className="text-xl font-medium mb-4">{contribution.title}</h3>
+                <p className="text-white/50 leading-relaxed">{contribution.description}</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {contribution.images.length > 0 ? (
+                  contribution.images.map((img, i) => (
+                    <img key={i} src={img} alt="" className="rounded-xl w-full object-cover" />
+                  ))
+                ) : (
+                  <>
+                    <div className="h-36 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
+                      <p className="text-white/20 text-xs">GIF / screenshot</p>
+                    </div>
+                    <div className="h-36 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
+                      <p className="text-white/20 text-xs">GIF / screenshot</p>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-            {contribution.images.length > 0 ? (
-                contribution.images.map((img, i) => (
-                <img key={i} src={img} alt="" className="rounded-xl w-full object-cover" />
-                ))
-            ) : (
-                <>
-                <div className="h-36 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
-                    <p className="text-white/20 text-xs">GIF / screenshot</p>
-                </div>
-                <div className="h-36 bg-white/5 rounded-xl border border-white/10 flex items-center justify-center">
-                    <p className="text-white/20 text-xs">GIF / screenshot</p>
-                </div>
-                </>
-            )}
-            </div>
+          ))}
         </div>
-        ))}
-    </div>
-    </section>
+      </section>
 
-
-      {/* Next / Prev */}
+      {/* More projects */}
       <section className="px-8 md:px-20 py-16">
         <p className="text-white/40 text-sm uppercase tracking-widest mb-6">More projects</p>
         <div className="grid md:grid-cols-2 gap-6">

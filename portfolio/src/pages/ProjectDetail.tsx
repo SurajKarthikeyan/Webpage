@@ -26,7 +26,7 @@ export default function ProjectDetail() {
         <Link to="/" className="text-white/40 hover:text-white text-sm transition-colors mb-8 inline-block">← All projects</Link>
 
         {project.heroBanner ? (
-          <img src={project.heroBanner} alt={project.title} className="w-full h-64 object-cover rounded-xl mb-8" />
+          <img src={project.heroBanner} alt={project.title} className="w-full h-250 object-cover rounded-xl mb-8" />
         ) : (
           <div className="h-64 bg-white/5 rounded-xl flex items-center justify-center mb-8 border border-white/10">
             <p className="text-white/20 text-sm">Hero banner / GIF</p>

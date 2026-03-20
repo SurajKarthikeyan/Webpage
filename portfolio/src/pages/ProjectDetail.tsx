@@ -129,6 +129,18 @@ export default function ProjectDetail() {
         </div>
       </section>
 
+    {project.id === 'object-matching-recognition' && (
+      <section className="px-8 md:px-20 py-16" style={{ borderBottom: '1px solid #2A2A2A' }}>
+        <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>Research Paper</p>
+        <iframe
+          src="/research/ObjectMatchingFinalReport.pdf"
+          className="w-full rounded-xl"
+          style={{ height: '800px', border: '1px solid #2A2A2A' }}
+        />
+      </section>
+    )}
+
+
       {/* More projects */}
       <section className="px-8 md:px-20 py-16">
         <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>More projects</p>

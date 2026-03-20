@@ -289,8 +289,8 @@ export const projects: Project[] = [
   steamLink: undefined,
   githubLink: 'https://github.com/TheBlackWidower-232/ObjectMatchingRecognition',
   overview: 'Developed for Michigan State University\'s graduate Computer Vision course in Fall 2023. The system allows a user to upload a 3D model, select an object from their live camera feed, and have the program highlight matching instances of that object in the model. Built using BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching.',
-  thumbnail: '',
-  heroBanner: '',
+  thumbnail: '/research/ObjectRecognitionThumbnail.png',
+  heroBanner: '/research/ObjectRecognitionThumbnail.png',
   themeColor: {
     accent: '#10B981',
     accentMuted: '#022C22',

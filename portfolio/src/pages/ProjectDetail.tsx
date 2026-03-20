@@ -142,17 +142,39 @@ export default function ProjectDetail() {
           <PDFViewer url="/research/ObjectMatchingFinalReport.pdf" />
         </section>
       )}
-
-      {/* More projects */}
-      <section className="px-8 md:px-20 py-16">
-        <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>More projects</p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <Link to="/" className="rounded-xl p-6 hover:opacity-70 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
-            <p className="text-xs mb-2" style={{ color: '#A0A0A0' }}>← Back to all</p>
-            <p className="font-medium" style={{ color: '#E8E8E8' }}>All Projects</p>
-          </Link>
-        </div>
-      </section>
+    {/* More projects */}
+    <section className="px-8 md:px-20 py-16">
+      <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>More projects</p>
+      <div className="grid md:grid-cols-2 gap-6">
+        {(() => {
+          const currentIndex = projects.findIndex(p => p.id === project.id)
+          const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length]
+          const nextProject = projects[(currentIndex + 1) % projects.length]
+          return (
+            <>
+              <a href={`/projects/${prevProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
+                <div className="h-36 overflow-hidden">
+                  <img src={prevProject.thumbnail} alt={prevProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-4" style={{ backgroundColor: '#111111' }}>
+                  <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>← Previous</p>
+                  <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{prevProject.title}</p>
+                </div>
+              </a>
+              <a href={`/projects/${nextProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
+                <div className="h-36 overflow-hidden">
+                  <img src={nextProject.thumbnail} alt={nextProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-4" style={{ backgroundColor: '#111111' }}>
+                  <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>Next →</p>
+                  <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{nextProject.title}</p>
+                </div>
+              </a>
+            </>
+          )
+        })()}
+      </div>
+    </section>
 
     </div>
   )

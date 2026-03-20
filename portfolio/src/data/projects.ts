@@ -118,7 +118,6 @@ export const projects: Project[] = [
         description: 'Designed a custom audio event system built on Unity\'s animation events. The system uses a designer-friendly dictionary visible in the inspector, allowing SFX to be added, changed or removed with minimal code. Any AudioClip can be played on a local or remote object in a single line of code.',
         images: [
           '/pizzakai/AudioDictSingleLine.PNG',
-          '/pizzakai/pizzagod.gif',
         ],
       },
       {
@@ -128,6 +127,12 @@ export const projects: Project[] = [
           '/pizzakai/DeepDishSpriteSheet.PNG',
           '/pizzakai/DeepDishEmissiveSprite.PNG',
           '/pizzakai/DeepDish_Death.png',
+        ],
+      },
+      {
+        title: 'Emission results',
+        description: 'The final results of the emission pipeline applied across three enemy types — each with unique death and idle animations enhanced by the shader system.',
+        images: [
           '/pizzakai/BreadstickIdleGif.gif',
           '/pizzakai/DeepDishDeathGif.gif',
           '/pizzakai/ForkyIdleGIF.gif',

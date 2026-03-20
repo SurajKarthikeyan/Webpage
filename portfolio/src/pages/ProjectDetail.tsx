@@ -65,6 +65,11 @@ export default function ProjectDetail() {
               View source ↗
             </a>
           )}
+          {project.githubLink && (
+        <a href={project.githubLink} target="_blank" rel="noreferrer" style={{ color: '#A0A0A0', border: '1px solid #2A2A2A' }} className="px-6 py-3 rounded-lg text-sm hover:opacity-70 transition-opacity">
+            View source ↗
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">

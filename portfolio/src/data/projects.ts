@@ -274,5 +274,37 @@ export const projects: Project[] = [
     },
   ],
 },
+
+{
+  id: 'object-matching-recognition',
+  title: 'Live Environment Object Recognition',
+  subtitle: 'A computer vision system using pretrained models to match objects from a live camera feed against a user-uploaded 3D model.',
+  category: 'research',
+  tags: ['Python', 'Computer Vision', 'BASNet', 'SuperPoint'],
+  role: 'Researcher & Developer',
+  teamSize: 4,
+  duration: 'Fall 2023',
+  engine: 'Python',
+  itchLink: undefined,
+  steamLink: undefined,
+  githubLink: 'https://github.com/TheBlackWidower-232/ObjectMatchingRecognition',
+  overview: 'Developed for Michigan State University\'s graduate Computer Vision course in Fall 2023. The system allows a user to upload a 3D model, select an object from their live camera feed, and have the program highlight matching instances of that object in the model. Built using BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching.',
+  thumbnail: '',
+  heroBanner: '',
+  themeColor: {
+    accent: '#10B981',
+    accentMuted: '#022C22',
+    tag: '#022C22',
+    tagText: '#10B981',
+  },
+  contributions: [
+    {
+      title: 'Object detection & matching pipeline',
+      description: 'Built the end-to-end pipeline using three pretrained models — BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching. The system takes a user-selected object from a live camera feed and highlights corresponding instances in an uploaded 3D model.',
+      images: [],
+    },
+  ],
+},
+
 ]
 

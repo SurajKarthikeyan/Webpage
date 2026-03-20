@@ -11,7 +11,13 @@ export default function Navbar() {
         <a href="#projects" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-base transition-opacity">Projects</a>
         <a href="#skills" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-base transition-opacity">Skills</a>
         <a href="#contact" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-base transition-opacity">Contact</a>
-        <a href="/Suraj_Karthikeyan_Resume.pdf" target="_blank" rel="noreferrer" style={{ color: '#E8E8E8', border: '1px solid #3A3A3A', backgroundColor: '#1A1A1A' }} className="hover:opacity-70 text-base transition-opacity px-5 py-2 rounded-lg">Resume</a>
+        <a href="/Suraj_Karthikeyan_Resume.pdf" target="_blank" rel="noreferrer" className="resume-btn" style={{ color: '#E8E8E8', border: '1px solid #3A3A3A', backgroundColor: '#1A1A1A', display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '8px 20px 8px 14px', borderRadius: '8px', fontSize: '15px', textDecoration: 'none' }}>
+          <span className="ping-wrap">
+            <span className="ping-dot"></span>
+            <span className="ping-ring"></span>
+          </span>
+          Resume
+        </a>
       </div>
     </nav>
   )

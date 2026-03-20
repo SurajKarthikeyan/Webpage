@@ -11,7 +11,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="flex flex-col justify-center min-h-screen px-8 md:px-20 pt-20">
-        <p style={{ color: '#A0A0A0' }} className="text-sm uppercase tracking-widest mb-4">Software Engineer & Game Developer</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm uppercase tracking-widest mb-4">Software Engineer & Game Developer</p>
         <h1 className="text-5xl md:text-7xl font-medium leading-tight mb-6" style={{ color: '#E8E8E8' }}>
           Suraj<br />Karthikeyan.
         </h1>
@@ -26,12 +26,12 @@ export default function Home() {
             Get in touch
           </a>
         </div>
-        <p style={{ color: '#A0A0A0' }} className="text-sm mt-16">↓ scroll</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm mt-16">↓ scroll</p>
       </section>
 
       {/* About */}
       <section id="about" className="px-8 md:px-20 py-24" style={{ borderTop: '1px solid #2A2A2A' }}>
-        <p style={{ color: '#A0A0A0' }} className="text-sm uppercase tracking-widest mb-8">About</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm uppercase tracking-widest mb-8">About</p>
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <p style={{ color: '#E8E8E8' }} className="text-xl leading-relaxed">
@@ -41,9 +41,9 @@ export default function Home() {
               When I'm not fixing the last bug I pushed, I'm powerlifting, reading philosophy, playing the saxophone, or annoying my cat Tyler.
             </p>
             <div className="flex gap-6 mt-8">
-              <a href="https://github.com/SurajKarthikeyan" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">GitHub ↗</a>
-              <a href="https://www.linkedin.com/in/suraj-karthikeyan-04baa0191/" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">LinkedIn ↗</a>
-              <a href="https://surajkarthikeyan.itch.io/" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">itch.io ↗</a>
+              <a href="https://github.com/SurajKarthikeyan" target="_blank" rel="noreferrer" style={{ color: '#06B6D4' }} className="hover:opacity-70 text-sm transition-opacity">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/suraj-karthikeyan-04baa0191/" target="_blank" rel="noreferrer" style={{ color: '#06B6D4' }} className="hover:opacity-70 text-sm transition-opacity">LinkedIn ↗</a>
+              <a href="https://surajkarthikeyan.itch.io/" target="_blank" rel="noreferrer" style={{ color: '#06B6D4' }} className="hover:opacity-70 text-sm transition-opacity">itch.io ↗</a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -69,7 +69,7 @@ export default function Home() {
 
       {/* Projects */}
       <section id="projects" className="px-8 md:px-20 py-24" style={{ borderTop: '1px solid #2A2A2A' }}>
-        <p style={{ color: '#A0A0A0' }} className="text-sm uppercase tracking-widest mb-16">Projects</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm uppercase tracking-widest mb-16">Projects</p>
 
         {/* Games */}
         <div className="mb-16">
@@ -164,7 +164,7 @@ export default function Home() {
 
       {/* Skills */}
       <section id="skills" className="px-8 md:px-20 py-24" style={{ borderTop: '1px solid #2A2A2A' }}>
-        <p style={{ color: '#A0A0A0' }} className="text-sm uppercase tracking-widest mb-8">Skills</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm uppercase tracking-widest mb-8">Skills</p>
         <div className="space-y-6">
           <div>
             <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#A0A0A0' }}>Languages</p>
@@ -187,12 +187,12 @@ export default function Home() {
 
       {/* Contact */}
       <section id="contact" className="px-8 md:px-20 py-24" style={{ borderTop: '1px solid #2A2A2A' }}>
-        <p style={{ color: '#A0A0A0' }} className="text-sm uppercase tracking-widest mb-8">Contact</p>
+        <p style={{ color: '#06B6D4' }} className="text-sm uppercase tracking-widest mb-8">Contact</p>
         <div className="grid md:grid-cols-2 gap-16">
           <div>
             <h2 className="text-3xl font-medium mb-4" style={{ color: '#E8E8E8' }}>Let's talk.</h2>
             <p className="leading-relaxed mb-8" style={{ color: '#A0A0A0' }}>Open to roles in game development, systems engineering, and application development.</p>
-            <a href="mailto:surajkarthikeyan@gmail.com" style={{ color: '#A0A0A0' }} className="text-sm hover:opacity-70 transition-opacity">surajkarthikeyan@gmail.com ↗</a>
+            <a href="mailto:surajkarthikeyan@gmail.com" style={{ color: '#06B6D4' }} className="text-sm hover:opacity-70 transition-opacity">surajkarthikeyan@gmail.com ↗</a>
           </div>
           <form
             className="space-y-4"
@@ -226,7 +226,7 @@ export default function Home() {
             <input name="email" type="email" placeholder="Email address" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
             <textarea name="message" placeholder="Message" rows={4} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none resize-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
             {formStatus === 'success' && (
-              <p className="text-sm" style={{ color: '#10B981' }}>Message sent! I'll get back to you soon.</p>
+              <p className="text-sm" style={{ color: '#06B6D4' }}>Message sent! I'll get back to you soon.</p>
             )}
             {formStatus === 'error' && (
               <p className="text-sm" style={{ color: '#E24B4A' }}>Something went wrong. Please try again or email directly.</p>

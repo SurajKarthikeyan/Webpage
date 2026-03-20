@@ -1,13 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #111111;
-  --text: #E8E8E8;
-  --text-muted: #A0A0A0;
-  --border: #2A2A2A;
+.resume-btn {
+  position: relative;
+  overflow: hidden;
 }
 
-body {
-  background-color: var(--bg);
-  color: var(--text);
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  top: 0;
+  left: -60px;
+  background: rgba(6, 182, 212, 0.2);
+  transform: skewX(-20deg);
+  animation: spotlight 3s ease-in-out infinite;
+}
+
+@keyframes spotlight {
+  0% { left: -60px; }
+  60%, 100% { left: 160px; }
+}
+
+.ping-wrap {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.ping-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #06B6D4;
+  position: absolute;
+}
+
+.ping-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #06B6D4;
+  position: absolute;
+  animation: pingRing 1.5s ease-out infinite;
+}
+
+@keyframes pingRing {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
 }

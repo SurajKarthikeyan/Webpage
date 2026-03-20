@@ -14,7 +14,7 @@
   left: -60px;
   background: rgba(6, 182, 212, 0.2);
   transform: skewX(-20deg);
-  animation: spotlight 3s ease-in-out infinite;
+  animation: spotlight 1.5s ease-in-out infinite;
 }
 
 @keyframes spotlight {

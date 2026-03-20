@@ -1,26 +1,24 @@
-import { StrictMode, useState, useEffect } from 'react'
+import { StrictMode, useState, useEffect, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
 
-function LoadingScreen({ show }: { show: boolean }) {
-  const [visible, setVisible] = useState(false)
+function LoadingScreen({ trigger }: { trigger: number }) {
+  const [visible, setVisible] = useState(true)
   const [fading, setFading] = useState(false)
 
   useEffect(() => {
-    if (show) {
-      setVisible(true)
-      setFading(false)
-      const fadeTimer = setTimeout(() => setFading(true), 400)
-      const hideTimer = setTimeout(() => setVisible(false), 900)
-      return () => {
-        clearTimeout(fadeTimer)
-        clearTimeout(hideTimer)
-      }
+    setVisible(true)
+    setFading(false)
+    const fadeTimer = setTimeout(() => setFading(true), 600)
+    const hideTimer = setTimeout(() => setVisible(false), 1100)
+    return () => {
+      clearTimeout(fadeTimer)
+      clearTimeout(hideTimer)
     }
-  }, [show])
+  }, [trigger])
 
   if (!visible) return null
 
@@ -58,33 +56,41 @@ function LoadingScreen({ show }: { show: boolean }) {
   )
 }
 
-function RouteWatcher({ onRouteChange }: { onRouteChange: () => void }) {
+function Inner({ onNavigate }: { onNavigate: () => void }) {
   const location = useLocation()
+  const isFirst = useRef(true)
 
   useEffect(() => {
-    onRouteChange()
+    if (isFirst.current) {
+      isFirst.current = false
+      return
+    }
+    onNavigate()
   }, [location.pathname])
 
-  return null
-}
-
-function App() {
-  const [loadKey, setLoadKey] = useState(0)
-
-  const triggerLoad = () => setLoadKey(k => k + 1)
-
   return (
-    <StrictMode>
-      <LoadingScreen show={loadKey > 0} key={loadKey} />
-      <BrowserRouter>
-        <RouteWatcher onRouteChange={triggerLoad} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
-        </Routes>
-      </BrowserRouter>
-    </StrictMode>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects/:id" element={<ProjectDetail />} />
+    </Routes>
   )
 }
 
-createRoot(document.getElementById('root')!).render(<App />)
+function App() {
+  const [trigger, setTrigger] = useState(0)
+
+  return (
+    <>
+      <LoadingScreen trigger={trigger} />
+      <BrowserRouter>
+        <Inner onNavigate={() => setTrigger(t => t + 1)} />
+      </BrowserRouter>
+    </>
+  )
+}
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+)

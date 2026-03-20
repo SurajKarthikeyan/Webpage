@@ -51,3 +51,75 @@
   0% { transform: scale(1); opacity: 1; }
   100% { transform: scale(2.5); opacity: 0; }
 }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.hero-name {
+  opacity: 0;
+  transform: translateY(32px);
+  animation: heroSlideUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroSlideUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+.hero-body {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroSlideUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-btns {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroSlideUp 0.8s ease forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes heroSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageFadeIn 0.4s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.project-card {
+  transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}

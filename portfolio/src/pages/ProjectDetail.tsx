@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import Navbar from '../components/Navbar'
 import PDFViewer from '../components/PDFViewer'
+import Lightbox from '../components/Lightbox'
 
 export default function ProjectDetail() {
   const { id } = useParams()
   const project = projects.find(p => p.id === id)
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
 
   if (!project) {
     return (
@@ -30,8 +33,9 @@ export default function ProjectDetail() {
           <img
             src={project.heroBanner}
             alt={project.title}
-            className="w-full h-[400px] rounded-xl mb-8"
+            className="w-full h-[400px] rounded-xl mb-8 cursor-pointer hover:opacity-90 transition-opacity"
             style={{ objectFit: 'cover', backgroundColor: '#1A1A1A' }}
+            onClick={() => setLightboxSrc(project.heroBanner)}
           />
         ) : (
           <div className="h-[400px] rounded-xl flex items-center justify-center mb-8" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A' }}>
@@ -117,7 +121,13 @@ export default function ProjectDetail() {
               <div className={`grid gap-4 grid-cols-1 ${contribution.images.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
                 {contribution.images.length > 0 ? (
                   contribution.images.map((img, i) => (
-                    <img key={i} src={img} alt="" className="rounded-xl w-full object-cover" />
+                    <img
+                      key={i}
+                      src={img}
+                      alt=""
+                      className="rounded-xl w-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                      onClick={() => setLightboxSrc(img)}
+                    />
                   ))
                 ) : (
                   <>
@@ -142,40 +152,42 @@ export default function ProjectDetail() {
           <PDFViewer url="/research/ObjectMatchingFinalReport.pdf" />
         </section>
       )}
-    {/* More projects */}
-    <section className="px-8 md:px-20 py-16">
-      <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>More projects</p>
-      <div className="grid md:grid-cols-2 gap-6">
-        {(() => {
-          const currentIndex = projects.findIndex(p => p.id === project.id)
-          const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length]
-          const nextProject = projects[(currentIndex + 1) % projects.length]
-          return (
-            <>
-              <a href={`/projects/${prevProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
-                <div className="h-36 overflow-hidden">
-                  <img src={prevProject.thumbnail} alt={prevProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-4" style={{ backgroundColor: '#111111' }}>
-                  <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>← Previous</p>
-                  <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{prevProject.title}</p>
-                </div>
-              </a>
-              <a href={`/projects/${nextProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
-                <div className="h-36 overflow-hidden">
-                  <img src={nextProject.thumbnail} alt={nextProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <div className="p-4" style={{ backgroundColor: '#111111' }}>
-                  <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>Next →</p>
-                  <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{nextProject.title}</p>
-                </div>
-              </a>
-            </>
-          )
-        })()}
-      </div>
-    </section>
 
+      {/* More projects */}
+      <section className="px-8 md:px-20 py-16">
+        <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>More projects</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {(() => {
+            const currentIndex = projects.findIndex(p => p.id === project.id)
+            const prevProject = projects[(currentIndex - 1 + projects.length) % projects.length]
+            const nextProject = projects[(currentIndex + 1) % projects.length]
+            return (
+              <>
+                <a href={`/projects/${prevProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
+                  <div className="h-36 overflow-hidden">
+                    <img src={prevProject.thumbnail} alt={prevProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-4" style={{ backgroundColor: '#111111' }}>
+                    <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>← Previous</p>
+                    <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{prevProject.title}</p>
+                  </div>
+                </a>
+                <a href={`/projects/${nextProject.id}`} className="group rounded-xl overflow-hidden hover:opacity-90 transition-opacity" style={{ border: '1px solid #2A2A2A' }}>
+                  <div className="h-36 overflow-hidden">
+                    <img src={nextProject.thumbnail} alt={nextProject.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-4" style={{ backgroundColor: '#111111' }}>
+                    <p className="text-xs mb-1" style={{ color: '#A0A0A0' }}>Next →</p>
+                    <p className="font-medium text-sm" style={{ color: '#E8E8E8' }}>{nextProject.title}</p>
+                  </div>
+                </a>
+              </>
+            )
+          })()}
+        </div>
+      </section>
+
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
     </div>
   )
 }

@@ -34,9 +34,9 @@ export default function ProjectDetail() {
         )}
 
         {project.award && (
-          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style={{ backgroundColor: '#2A1F00', border: '1px solid #5A3E00' }}>
-            <span style={{ color: '#E8820C' }} className="text-xs">★</span>
-            <span style={{ color: '#E8B84B' }} className="text-xs font-medium">{project.award}</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 mb-6" style={{ backgroundColor: project.themeColor.accentMuted, border: `1px solid ${project.themeColor.accent}` }}>
+            <span style={{ color: project.themeColor.accent }} className="text-xs">★</span>
+            <span style={{ color: project.themeColor.accent }} className="text-xs font-medium">{project.award}</span>
           </div>
         )}
 
@@ -100,7 +100,7 @@ export default function ProjectDetail() {
           {project.contributions.map((contribution, index) => (
             <div key={index} className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <h3 className="text-xl font-medium mb-4" style={{ color: '#E8E8E8' }}>{contribution.title}</h3>
+                <h3 className="text-xl font-medium mb-4" style={{ color: project.themeColor.accent }}>{contribution.title}</h3>
                 <p className="text-lg leading-relaxed" style={{ color: '#A0A0A0' }}>{contribution.description}</p>
               </div>
               <div className={`grid gap-4 ${contribution.images.length > 2 ? 'grid-cols-3' : 'grid-cols-2'}`}>

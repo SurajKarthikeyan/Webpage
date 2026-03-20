@@ -34,9 +34,9 @@ export const projects: Project[] = [
 
     themeColor: {
       accent: '#7F77DD',
-      accentMuted: '#EEEDFE',
-      tag: '#EEEDFE',
-      tagText: '#3C3489',
+      accentMuted: '#2A2860',
+      tag: '#2A2860',
+      tagText: '#A8A3F0',
     },
     
     id: 'wizards-and-rhymes',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     heroBanner: '/pizzakai/MainArtPicture_edited.jpg',
     themeColor: {
       accent: '#E8820C',
-      accentMuted: '#FFF3E0',
+      accentMuted: '#3D1F00',
       tag: '#3D1F00',
       tagText: '#E8820C',
     },
@@ -125,12 +125,11 @@ export const projects: Project[] = [
         title: 'Shader graphs & VFX',
         description: 'Built a shader graph pipeline that multiplied custom emission maps against an HDR glow texture, using alpha values from the emission map to control colour intensity. Applied this across every enemy, weapon, boss, and environment sprite sheet in the game — over 20 unique implementations.',
         images: [
-          '/pizzakai/ShaderGraphImage.png',
-          '/pizzakai/ShotgunDashEmissionSheet.png',
           '/pizzakai/DeepDishSpriteSheet.PNG',
           '/pizzakai/DeepDishEmissiveSprite.PNG',
-          '/pizzakai/DeepDishDeathGif.gif',
+          '/pizzakai/DeepDish_Death.png',
           '/pizzakai/BreadstickIdleGif.gif',
+          '/pizzakai/DeepDishDeathGif.gif',
           '/pizzakai/ForkyIdleGIF.gif',
         ],
       },

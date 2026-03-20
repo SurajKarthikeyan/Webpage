@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -22,23 +21,21 @@ export interface Project {
     images: string[];
   }[];
   themeColor: {
-  accent: string;
-  accentMuted: string;
-  tag: string;
-  tagText: string;
-}
+    accent: string;
+    accentMuted: string;
+    tag: string;
+    tagText: string;
+  }
 }
 
 export const projects: Project[] = [
   {
-
     themeColor: {
       accent: '#7F77DD',
       accentMuted: '#2A2860',
       tag: '#2A2860',
       tagText: '#A8A3F0',
     },
-    
     id: 'wizards-and-rhymes',
     title: 'Wizards & Rhymes',
     subtitle: 'A 3D isometric puzzle adventure where you play a wizard battling in an epic fantasy rap battle to claim the title of Wizard of all Rhymes.',
@@ -80,7 +77,6 @@ export const projects: Project[] = [
       },
     ],
   },
-
 
   {
     id: 'pizzakai',
@@ -142,172 +138,169 @@ export const projects: Project[] = [
   },
 
   {
-  id: 'stoma-vr',
-  title: 'STOMA VR',
-  subtitle: 'A VR medical simulation aimed at teaching new residents and students the differences between tracheostomies and laryngectomies through hands-on procedural practice.',
-  category: 'game',
-  tags: ['Unity', 'C#', 'VR', 'Simulation'],
-  role: 'Lead Programmer, Systems Engineer, Systems Integration',
-  teamSize: 8,
-  duration: '4 months',
-  engine: 'Unity',
-  itchLink: undefined,
-  steamLink: undefined,
-  githubLink: undefined,
-  overview: 'STOMA VR was developed over 4 months during the Summer of 2023 as a VR educational simulation for medical students. As Lead Programmer, I was responsible for the core interaction systems that allowed students to physically perform medical procedures in VR, as well as a state-based procedure system that tracked correctness and fed results back to supervising teachers.',
-  thumbnail: '/stoma-vr/MainPage.jpg',
-  heroBanner: '/stoma-vr/MainPage.jpg',
-  themeColor: {
-    accent: '#0D9488',
-    accentMuted: '#042F2E',
-    tag: '#042F2E',
-    tagText: '#0D9488',
+    id: 'stoma-vr',
+    title: 'STOMA VR',
+    subtitle: 'A VR medical simulation aimed at teaching new residents and students the differences between tracheostomies and laryngectomies through hands-on procedural practice.',
+    category: 'game',
+    tags: ['Unity', 'C#', 'VR', 'Simulation'],
+    role: 'Lead Programmer, Systems Engineer, Systems Integration',
+    teamSize: 8,
+    duration: '4 months',
+    engine: 'Unity',
+    itchLink: undefined,
+    steamLink: undefined,
+    githubLink: undefined,
+    overview: 'STOMA VR was developed over 4 months during the Summer of 2023 as a VR educational simulation for medical students. As Lead Programmer, I was responsible for the core interaction systems that allowed students to physically perform medical procedures in VR, as well as a state-based procedure system that tracked correctness and fed results back to supervising teachers.',
+    thumbnail: '/stoma-vr/MainPage.jpg',
+    heroBanner: '/stoma-vr/MainPage.jpg',
+    themeColor: {
+      accent: '#0D9488',
+      accentMuted: '#042F2E',
+      tag: '#042F2E',
+      tagText: '#0D9488',
+    },
+    contributions: [
+      {
+        title: 'Procedure system',
+        description: 'Responsible for the stage-change triggers within the two-part procedure system. Player actions — object collisions, object states — advanced the game state through each procedural step. Built in correctness tracking so supervising teachers could receive real-time feedback on student performance.',
+        images: [
+          '/stoma-vr/MainModule1Showcase.PNG',
+          '/stoma-vr/Module1Games.png',
+        ],
+      },
+      {
+        title: 'Player interaction system',
+        description: 'Designed and engineered the player interaction system using C# interfaces to detect and handle interactable objects in the scene. Using interfaces allowed for multiple inheritance, meaning any object could be made interactable with a consistent API while keeping individual implementations flexible.',
+        images: [
+          '/stoma-vr/PlayerHand.PNG',
+          '/stoma-vr/Patient3.PNG',
+        ],
+      },
+      {
+        title: 'Audio-animation system',
+        description: 'Built an audio event system on top of Unity\'s animation events, allowing audio clips to trigger at specific animation frames. Designed for extensibility — new SFX could be added with minimal additional code. Used throughout the simulation for procedural feedback, such as syncing audio to patient interaction animations.',
+        images: [
+          '/stoma-vr/AudioDictImage1.PNG',
+          '/stoma-vr/AudioDictImage2.PNG',
+        ],
+      },
+    ],
   },
-  contributions: [
-    {
-      title: 'Procedure system',
-      description: 'Responsible for the stage-change triggers within the two-part procedure system. Player actions — object collisions, object states — advanced the game state through each procedural step. Built in correctness tracking so supervising teachers could receive real-time feedback on student performance.',
-      images: [
-        '/stoma-vr/MainModule1Showcase.PNG',
-        '/stoma-vr/Module1Games.png',
-      ],
-    },
-    {
-      title: 'Player interaction system',
-      description: 'Designed and engineered the player interaction system using C# interfaces to detect and handle interactable objects in the scene. Using interfaces allowed for multiple inheritance, meaning any object could be made interactable with a consistent API while keeping individual implementations flexible.',
-      images: [
-        '/stoma-vr/PlayerHand.PNG',
-        '/stoma-vr/Patient3.PNG',
-      ],
-    },
-    {
-      title: 'Audio-animation system',
-      description: 'Built an audio event system on top of Unity\'s animation events, allowing audio clips to trigger at specific animation frames. Designed for extensibility — new SFX could be added with minimal additional code. Used throughout the simulation for procedural feedback, such as syncing audio to patient interaction animations.',
-      images: [
-        '/stoma-vr/AudioDictImage1.PNG',
-        '/stoma-vr/AudioDictImage2.PNG',
-      ],
-    },
-  ],
-},
 
-{
-  id: 'beyond-meetspace',
-  title: 'Beyond MeetSpace',
-  subtitle: 'A VR meeting platform designed for classrooms, game designers and large virtual meetings, funded by the National Science Foundation.',
-  category: 'game',
-  tags: ['Unity', 'C#', 'VR', 'VRChat'],
-  role: 'Systems Engineer, Team Lead',
-  teamSize: 6,
-  duration: '4 months',
-  engine: 'Unity',
-  itchLink: undefined,
-  steamLink: undefined,
-  githubLink: undefined,
-  overview: 'Beyond MeetSpace is an NSF-funded VR meeting platform built for classrooms, game designers and large-scale virtual meetings. As Team Lead and Systems Engineer, I was responsible for bridging communication between the development team and the research leadership, managing scope and deadlines for client-facing research studies, and refactoring the avatar creation pipeline — reducing development time by 64%.',
-  thumbnail: '/bms/BMSCoverImage.PNG',
-  heroBanner: '/bms/BMSCoverImage.PNG',
-  themeColor: {
-    accent: '#6B7FD4',
-    accentMuted: '#141830',
-    tag: '#141830',
-    tagText: '#6B7FD4',
+  {
+    id: 'beyond-meetspace',
+    title: 'Beyond MeetSpace',
+    subtitle: 'A VR meeting platform designed for classrooms, game designers and large virtual meetings, funded by the National Science Foundation.',
+    category: 'game',
+    tags: ['Unity', 'C#', 'VR', 'VRChat'],
+    role: 'Systems Engineer, Team Lead',
+    teamSize: 6,
+    duration: '4 months',
+    engine: 'Unity',
+    itchLink: undefined,
+    steamLink: undefined,
+    githubLink: undefined,
+    overview: 'Beyond MeetSpace is an NSF-funded VR meeting platform built for classrooms, game designers and large-scale virtual meetings. As Team Lead and Systems Engineer, I was responsible for bridging communication between the development team and the research leadership, managing scope and deadlines for client-facing research studies, and refactoring the avatar creation pipeline — reducing development time by 64%.',
+    thumbnail: '/bms/BMSCoverImage.PNG',
+    heroBanner: '/bms/BMSCoverImage.PNG',
+    themeColor: {
+      accent: '#6B7FD4',
+      accentMuted: '#141830',
+      tag: '#141830',
+      tagText: '#6B7FD4',
+    },
+    contributions: [
+      {
+        title: 'Team lead & communication',
+        description: 'Served as the bridge between the 6-member development team and the NSF-funded research leadership. On a weekly basis I ran meetings with both groups, conveying tasks, requested features, and bug reports in both directions — while ensuring requested features stayed within scope and didn\'t block other key systems.',
+        images: [
+          '/bms/CastleAndBoat.PNG',
+          '/bms/Beach.PNG',
+        ],
+      },
+      {
+        title: 'Avatar system refactor',
+        description: 'Refactored the existing ReadyPlayerMe avatar creation pipeline for VRChat, improving development time by 64%. By decoupling the avatar import process from code, designers could freely add new avatars without engineering involvement. Also designed an in-game avatar board allowing players to browse and select their avatar.',
+        images: [
+          '/bms/BMSSlideShowImage.PNG',
+          '/bms/BMSBoardImage.PNG',
+        ],
+      },
+    ],
   },
-  contributions: [
-    {
-      title: 'Team lead & communication',
-      description: 'Served as the bridge between the 6-member development team and the NSF-funded research leadership. On a weekly basis I ran meetings with both groups, conveying tasks, requested features, and bug reports in both directions — while ensuring requested features stayed within scope and didn\'t block other key systems.',
-      images: [
-        '/bms/CastleAndBoat.PNG',
-        '/bms/Beach.PNG',
-      ],
-    },
-    {
-      title: 'Avatar system refactor',
-      description: 'Refactored the existing ReadyPlayerMe avatar creation pipeline for VRChat, improving development time by 64%. By decoupling the avatar import process from code, designers could freely add new avatars without engineering involvement. Also designed an in-game avatar board allowing players to browse and select their avatar.',
-      images: [
-        '/bms/BMSSlideShowImage.PNG',
-        '/bms/BMSBoardImage.PNG',
-      ],
-    },
-  ],
-},
 
-
-{
-  id: 'simple-eq',
-  title: 'SimpleEQ',
-  subtitle: 'A C++ equalizer plugin built in the JUCE framework, deployable as a VST3 inside any DAW including Reaper and Ableton.',
-  category: 'solo',
-  tags: ['C++', 'JUCE', 'VST3', 'Audio'],
-  role: 'Solo Developer',
-  teamSize: 1,
-  duration: 'Personal project',
-  engine: 'JUCE',
-  itchLink: undefined,
-  steamLink: undefined,
-  githubLink: undefined,
-  overview: 'After working extensively with audio implementation in Unity games, I wanted to go deeper into audio engineering by building my own C++ plugin from scratch. SimpleEQ is a fully functional equalizer VST3 built in the JUCE framework, loadable inside any DAW. It implements high and low pass filters, adjustable attenuation slopes from 12 to 48 dB per octave, and a real-time gain filter — all controllable via sliders with live audio feedback.',
-  thumbnail: '/simple-eq/ReaperBackgroundShot.PNG',
-  heroBanner: '/simple-eq/ReaperBackgroundShot.PNG',
-  themeColor: {
-    accent: '#4F6EF7',
-    accentMuted: '#0F1540',
-    tag: '#0F1540',
-    tagText: '#4F6EF7',
+  {
+    id: 'simple-eq',
+    title: 'SimpleEQ',
+    subtitle: 'A C++ equalizer plugin built in the JUCE framework, deployable as a VST3 inside any DAW including Reaper and Ableton.',
+    category: 'solo',
+    tags: ['C++', 'JUCE', 'VST3', 'Audio'],
+    role: 'Solo Developer',
+    teamSize: 1,
+    duration: 'Personal project',
+    engine: 'JUCE',
+    itchLink: undefined,
+    steamLink: undefined,
+    githubLink: undefined,
+    overview: 'After working extensively with audio implementation in Unity games, I wanted to go deeper into audio engineering by building my own C++ plugin from scratch. SimpleEQ is a fully functional equalizer VST3 built in the JUCE framework, loadable inside any DAW. It implements high and low pass filters, adjustable attenuation slopes from 12 to 48 dB per octave, and a real-time gain filter — all controllable via sliders with live audio feedback.',
+    thumbnail: '/SimpleEQ/SimpleEQBanner.png',
+    heroBanner: '/SimpleEQ/SimpleEQBanner.png',
+    themeColor: {
+      accent: '#4F6EF7',
+      accentMuted: '#0F1540',
+      tag: '#0F1540',
+      tagText: '#4F6EF7',
+    },
+    contributions: [
+      {
+        title: 'Pass filters & attenuation',
+        description: 'Implemented high and low pass filters that attenuate frequencies above or below the slider mark. Used together they create a band pass filter. The attenuation slope is adjustable between 12 and 48 dB per octave, giving precise control over how aggressively frequencies are cut.',
+        images: [
+          '/SimpleEQ/ReaperBackgroundShot.PNG',
+          '/SimpleEQ/image.png',
+        ],
+      },
+      {
+        title: 'Gain filter',
+        description: 'Built a real-time gain filter that modifies the amplitude of the audio signal by multiplying each buffer sample by a gain coefficient derived from the slider value. The modified samples replace the buffer before playback, allowing for live gain adjustments with no latency.',
+        images: [
+          '/SimpleEQ/FilterGraphImage.PNG',
+        ],
+      },
+    ],
   },
-  contributions: [
-    {
-      title: 'Pass filters & attenuation',
-      description: 'Implemented high and low pass filters that attenuate frequencies above or below the slider mark. Used together they create a band pass filter. The attenuation slope is adjustable between 12 and 48 dB per octave, giving precise control over how aggressively frequencies are cut.',
-      images: [
-        '/simple-eq/image.png',
-        '/simple-eq/ReaperBackgroundShot.PNG',
-      ],
-    },
-    {
-      title: 'Gain filter',
-      description: 'Built a real-time gain filter that modifies the amplitude of the audio signal by multiplying each buffer sample by a gain coefficient derived from the slider value. The modified samples replace the buffer before playback, allowing for live gain adjustments with no latency.',
-      images: [
-        '/simple-eq/FilterGraphImage.PNG',
-      ],
-    },
-  ],
-},
 
-{
-  id: 'object-matching-recognition',
-  title: 'Live Environment Object Recognition',
-  subtitle: 'A computer vision system using pretrained models to match objects from a live camera feed against a user-uploaded 3D model.',
-  category: 'research',
-  tags: ['Python', 'Computer Vision', 'BASNet', 'SuperPoint'],
-  role: 'Researcher & Developer',
-  teamSize: 4,
-  duration: 'Fall 2023',
-  engine: 'Python',
-  itchLink: undefined,
-  steamLink: undefined,
-  githubLink: 'https://github.com/TheBlackWidower-232/ObjectMatchingRecognition',
-  overview: 'Developed for Michigan State University\'s graduate Computer Vision course in Fall 2023. The system allows a user to upload a 3D model, select an object from their live camera feed, and have the program highlight matching instances of that object in the model. Built using BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching.',
-  thumbnail: '/research/ObjectRecognitionThumbnail.png',
-  heroBanner: '/research/ObjectRecognitionThumbnail.png',
-  themeColor: {
-    accent: '#10B981',
-    accentMuted: '#022C22',
-    tag: '#022C22',
-    tagText: '#10B981',
+  {
+    id: 'object-matching-recognition',
+    title: 'Live Environment Object Recognition',
+    subtitle: 'A computer vision system using pretrained models to match objects from a live camera feed against a user-uploaded 3D model.',
+    category: 'research',
+    tags: ['Python', 'Computer Vision', 'BASNet', 'SuperPoint'],
+    role: 'Researcher & Developer',
+    teamSize: 4,
+    duration: 'Fall 2023',
+    engine: 'Python',
+    itchLink: undefined,
+    steamLink: undefined,
+    githubLink: 'https://github.com/TheBlackWidower-232/ObjectMatchingRecognition',
+    overview: 'Developed for Michigan State University\'s graduate Computer Vision course in Fall 2023. The system allows a user to upload a 3D model, select an object from their live camera feed, and have the program highlight matching instances of that object in the model. Built using BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching.',
+    thumbnail: '/research/ObjectRecognitionThumbnail.png',
+    heroBanner: '/research/ObjectRecognitionThumbnail.png',
+    themeColor: {
+      accent: '#10B981',
+      accentMuted: '#022C22',
+      tag: '#022C22',
+      tagText: '#10B981',
+    },
+    contributions: [
+      {
+        title: 'Object detection & matching pipeline',
+        description: 'Built the end-to-end pipeline using three pretrained models — BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching. The system takes a user-selected object from a live camera feed and highlights corresponding instances in an uploaded 3D model.',
+        images: [
+          '/research/BASNetPipeline.png',
+          '/research/SuperPointLightGlue.png',
+        ],
+      },
+    ],
   },
-  contributions: [
-    {
-      title: 'Object detection & matching pipeline',
-      description: 'Built the end-to-end pipeline using three pretrained models — BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching. The system takes a user-selected object from a live camera feed and highlights corresponding instances in an uploaded 3D model.',
-      images: [
-        '/research/BASNetPipeline.png',
-        '/research/SuperPointLightGlue.png',
-      ],
-    },
-  ],
-},
-
 ]
-

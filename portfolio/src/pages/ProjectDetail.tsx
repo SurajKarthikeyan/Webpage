@@ -27,9 +27,9 @@ export default function ProjectDetail() {
         <Link to="/" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity mb-8 inline-block">← All projects</Link>
 
         {project.heroBanner ? (
-          <img src={project.heroBanner} alt={project.title} className="w-full h-[500px] object-cover rounded-xl mb-8" />
+          <img src={project.heroBanner} alt={project.title} className="w-full h-[400px] object-contain rounded-xl mb-8" style={{ backgroundColor: '#1A1A1A' }} />
         ) : (
-          <div className="h-[500px] rounded-xl flex items-center justify-center mb-8" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A' }}>
+          <div className="h-[400px] rounded-xl flex items-center justify-center mb-8" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A' }}>
             <p style={{ color: '#A0A0A0' }} className="text-sm">Hero banner / GIF</p>
           </div>
         )}

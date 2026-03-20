@@ -37,9 +37,9 @@ export default function PDFViewer({ url }: { url: string }) {
         </a>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', border: '1px solid #2A2A2A', borderRadius: '12px', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', border: '1px solid #2A2A2A', borderRadius: '12px', overflow: 'hidden', backgroundColor: '#1A1A1A', padding: '1rem' }}>
         {pages.map((page, i) => (
-          <img key={i} src={page} alt={`Page ${i + 1}`} style={{ width: '100%', display: 'block' }} />
+          <img key={i} src={page} alt={`Page ${i + 1}`} style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto 8px' }} />
         ))}
       </div>
     </div>

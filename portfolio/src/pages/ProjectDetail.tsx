@@ -114,7 +114,7 @@ export default function ProjectDetail() {
                 <h3 className="text-xl font-medium mb-4" style={{ color: project.themeColor.accent }}>{contribution.title}</h3>
                 <p className="text-lg leading-relaxed" style={{ color: '#A0A0A0' }}>{contribution.description}</p>
               </div>
-              <div className={`grid gap-4 ${contribution.images.length > 2 ? 'grid-cols-3' : 'grid-cols-2'}`}>
+              <div className={`grid gap-4 grid-cols-1 ${contribution.images.length > 2 ? 'md:grid-cols-3' : 'md:grid-cols-2'}`}>
                 {contribution.images.length > 0 ? (
                   contribution.images.map((img, i) => (
                     <img key={i} src={img} alt="" className="rounded-xl w-full object-cover" />

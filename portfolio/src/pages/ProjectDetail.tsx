@@ -18,8 +18,6 @@ export default function ProjectDetail() {
     )
   }
 
-  const useContain = project.id === 'simple-eq' || project.id === 'object-matching-recognition'
-
   return (
     <div style={{ backgroundColor: '#111111', color: '#E8E8E8' }} className="min-h-screen">
       <Navbar />
@@ -33,10 +31,7 @@ export default function ProjectDetail() {
             src={project.heroBanner}
             alt={project.title}
             className="w-full h-[400px] rounded-xl mb-8"
-            style={{
-              objectFit: useContain ? 'contain' : 'cover',
-              backgroundColor: '#1A1A1A',
-            }}
+            style={{ objectFit: 'cover', backgroundColor: '#1A1A1A' }}
           />
         ) : (
           <div className="h-[400px] rounded-xl flex items-center justify-center mb-8" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A' }}>

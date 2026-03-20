@@ -301,7 +301,10 @@ export const projects: Project[] = [
     {
       title: 'Object detection & matching pipeline',
       description: 'Built the end-to-end pipeline using three pretrained models — BASNet for salient object detection, SuperPoint for keypoint extraction, and LightGlue for feature matching. The system takes a user-selected object from a live camera feed and highlights corresponding instances in an uploaded 3D model.',
-      images: [],
+      images: [
+        '/research/BASNetPipeline.png',
+        '/research/SuperPointLightGlue.png',
+      ],
     },
   ],
 },

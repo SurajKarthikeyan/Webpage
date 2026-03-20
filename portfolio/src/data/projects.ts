@@ -10,6 +10,7 @@ export interface Project {
   duration: string;
   engine: string;
   award?: string;
+  steamLink?: string;
   itchLink?: string;
   githubLink?: string;
   overview: string;
@@ -75,6 +76,62 @@ export const projects: Project[] = [
         images: [
           '/wizards-and-rhymes/WWiseGIF.gif',
           '/wizards-and-rhymes/DecalGif.gif',
+        ],
+      },
+    ],
+  },
+
+
+  {
+    id: 'pizzakai',
+    title: 'PizzaKai',
+    subtitle: 'A 2D action platformer where you play as a deceased slice of pizza, destroying pizza mobsters through a corrupt pizza-based world.',
+    category: 'game',
+    tags: ['Unity', 'C#', 'Steam', '2D Platformer'],
+    role: 'Producer, Lead Systems Engineer, SFX Designer, VFX Artist',
+    teamSize: 9,
+    duration: '4 months',
+    engine: 'Unity',
+    itchLink: undefined,
+    githubLink: undefined,
+    steamLink: 'https://store.steampowered.com/app/2834430/Pizzakai/',
+    overview: 'PizzaKai was developed over 4 months as part of Michigan State University\'s Game Design and Development program. As Producer and Lead Systems Engineer, I led the programming, art, VFX and SFX teams across the full development cycle. My work spanned core weapon systems, a custom audio pipeline, and a shader-based VFX system used across every enemy, weapon, and environment in the game.',
+    thumbnail: '/pizzakai/MainArtPicture_edited.jpg',
+    heroBanner: '/pizzakai/MainArtPicture_edited.jpg',
+    themeColor: {
+      accent: '#E8820C',
+      accentMuted: '#FFF3E0',
+      tag: '#3D1F00',
+      tagText: '#E8820C',
+    },
+    contributions: [
+      {
+        title: 'Shotgun Slam system',
+        description: 'Designed and implemented the Shotgun Slam — a melee alternative fire for the shotgun. I was responsible for the full code implementation, VFX using emission maps and shader graphs, and SFX. A key design principle was maximising the satisfaction and physical feedback of the move.',
+        images: [
+          '/pizzakai/ShotgunDashShowcaseGif.gif',
+          '/pizzakai/ShotgunDashCloseGIF.gif',
+        ],
+      },
+      {
+        title: 'Audio dictionary system',
+        description: 'Designed a custom audio event system built on Unity\'s animation events. The system uses a designer-friendly dictionary visible in the inspector, allowing SFX to be added, changed or removed with minimal code. Any AudioClip can be played on a local or remote object in a single line of code.',
+        images: [
+          '/pizzakai/AudioDictSingleLine.PNG',
+          '/pizzakai/pizzagod.gif',
+        ],
+      },
+      {
+        title: 'Shader graphs & VFX',
+        description: 'Built a shader graph pipeline that multiplied custom emission maps against an HDR glow texture, using alpha values from the emission map to control colour intensity. Applied this across every enemy, weapon, boss, and environment sprite sheet in the game — over 20 unique implementations.',
+        images: [
+          '/pizzakai/ShaderGraphImage.png',
+          '/pizzakai/ShotgunDashEmissionSheet.png',
+          '/pizzakai/DeepDishSpriteSheet.PNG',
+          '/pizzakai/DeepDishEmissiveSprite.PNG',
+          '/pizzakai/DeepDishDeathGif.gif',
+          '/pizzakai/BreadstickIdleGif.gif',
+          '/pizzakai/ForkyIdleGIF.gif',
         ],
       },
     ],

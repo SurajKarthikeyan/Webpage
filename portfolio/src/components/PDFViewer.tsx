@@ -1,4 +1,13 @@
 export default function PDFViewer({ url }: { url: string }) {
+  const pages = [
+    '/research/ObjectMatchingFinalReport_page-0001.jpg',
+    '/research/ObjectMatchingFinalReport_page-0002.jpg',
+    '/research/ObjectMatchingFinalReport_page-0003.jpg',
+    '/research/ObjectMatchingFinalReport_page-0004.jpg',
+    '/research/ObjectMatchingFinalReport_page-0005.jpg',
+    '/research/ObjectMatchingFinalReport_page-0006.jpg',
+  ]
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
       <div style={{ background: '#1A1A1A', border: '1px solid #2A2A2A', borderRadius: '12px', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
@@ -24,15 +33,15 @@ export default function PDFViewer({ url }: { url: string }) {
           </div>
         </div>
         <a href={url} target="_blank" rel="noreferrer" style={{ background: '#10B981', color: '#022C22', fontSize: '13px', fontWeight: 500, padding: '10px 24px', borderRadius: '8px', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
-          Read paper ↗
+          Download PDF ↗
         </a>
       </div>
 
-      <iframe
-        src={url}
-        style={{ width: '100%', height: '900px', border: '1px solid #2A2A2A', borderRadius: '12px' }}
-        title="Research Paper"
-      />
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', border: '1px solid #2A2A2A', borderRadius: '12px', overflow: 'hidden' }}>
+        {pages.map((page, i) => (
+          <img key={i} src={page} alt={`Page ${i + 1}`} style={{ width: '100%', display: 'block' }} />
+        ))}
+      </div>
     </div>
   )
 }

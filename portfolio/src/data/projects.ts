@@ -190,5 +190,46 @@ export const projects: Project[] = [
     },
   ],
 },
+
+{
+  id: 'simple-eq',
+  title: 'SimpleEQ',
+  subtitle: 'A C++ equalizer plugin built in the JUCE framework, deployable as a VST3 inside any DAW including Reaper and Ableton.',
+  category: 'solo',
+  tags: ['C++', 'JUCE', 'VST3', 'Audio'],
+  role: 'Solo Developer',
+  teamSize: 1,
+  duration: 'Personal project',
+  engine: 'JUCE',
+  itchLink: undefined,
+  steamLink: undefined,
+  githubLink: undefined,
+  overview: 'After working extensively with audio implementation in Unity games, I wanted to go deeper into audio engineering by building my own C++ plugin from scratch. SimpleEQ is a fully functional equalizer VST3 built in the JUCE framework, loadable inside any DAW. It implements high and low pass filters, adjustable attenuation slopes from 12 to 48 dB per octave, and a real-time gain filter — all controllable via sliders with live audio feedback.',
+  thumbnail: '/simple-eq/ReaperBackgroundShot.PNG',
+  heroBanner: '/simple-eq/ReaperBackgroundShot.PNG',
+  themeColor: {
+    accent: '#4F6EF7',
+    accentMuted: '#0F1540',
+    tag: '#0F1540',
+    tagText: '#4F6EF7',
+  },
+  contributions: [
+    {
+      title: 'Pass filters & attenuation',
+      description: 'Implemented high and low pass filters that attenuate frequencies above or below the slider mark. Used together they create a band pass filter. The attenuation slope is adjustable between 12 and 48 dB per octave, giving precise control over how aggressively frequencies are cut.',
+      images: [
+        '/simple-eq/image.png',
+        '/simple-eq/ReaperBackgroundShot.PNG',
+      ],
+    },
+    {
+      title: 'Gain filter',
+      description: 'Built a real-time gain filter that modifies the amplitude of the audio signal by multiplying each buffer sample by a gain coefficient derived from the slider value. The modified samples replace the buffer before playback, allowing for live gain adjustments with no latency.',
+      images: [
+        '/simple-eq/FilterGraphImage.PNG',
+      ],
+    },
+  ],
+},
 ]
 

@@ -192,6 +192,49 @@ export const projects: Project[] = [
 },
 
 {
+  id: 'beyond-meetspace',
+  title: 'Beyond MeetSpace',
+  subtitle: 'A VR meeting platform designed for classrooms, game designers and large virtual meetings, funded by the National Science Foundation.',
+  category: 'game',
+  tags: ['Unity', 'C#', 'VR', 'VRChat'],
+  role: 'Systems Engineer, Team Lead',
+  teamSize: 6,
+  duration: '4 months',
+  engine: 'Unity',
+  itchLink: undefined,
+  steamLink: undefined,
+  githubLink: undefined,
+  overview: 'Beyond MeetSpace is an NSF-funded VR meeting platform built for classrooms, game designers and large-scale virtual meetings. As Team Lead and Systems Engineer, I was responsible for bridging communication between the development team and the research leadership, managing scope and deadlines for client-facing research studies, and refactoring the avatar creation pipeline — reducing development time by 64%.',
+  thumbnail: '/bms/BMSCoverImage.PNG',
+  heroBanner: '/bms/BMSCoverImage.PNG',
+  themeColor: {
+    accent: '#6B7FD4',
+    accentMuted: '#141830',
+    tag: '#141830',
+    tagText: '#6B7FD4',
+  },
+  contributions: [
+    {
+      title: 'Team lead & communication',
+      description: 'Served as the bridge between the 6-member development team and the NSF-funded research leadership. On a weekly basis I ran meetings with both groups, conveying tasks, requested features, and bug reports in both directions — while ensuring requested features stayed within scope and didn\'t block other key systems.',
+      images: [
+        '/bms/CastleAndBoat.PNG',
+        '/bms/Beach.PNG',
+      ],
+    },
+    {
+      title: 'Avatar system refactor',
+      description: 'Refactored the existing ReadyPlayerMe avatar creation pipeline for VRChat, improving development time by 64%. By decoupling the avatar import process from code, designers could freely add new avatars without engineering involvement. Also designed an in-game avatar board allowing players to browse and select their avatar.',
+      images: [
+        '/bms/BMSSlideShowImage.PNG',
+        '/bms/BMSBoardImage.PNG',
+      ],
+    },
+  ],
+},
+
+
+{
   id: 'simple-eq',
   title: 'SimpleEQ',
   subtitle: 'A C++ equalizer plugin built in the JUCE framework, deployable as a VST3 inside any DAW including Reaper and Ableton.',

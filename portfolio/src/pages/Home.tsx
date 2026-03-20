@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { projects } from '../data/projects'
 import Navbar from '../components/Navbar'
 
 export default function Home() {
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+
   return (
     <div style={{ backgroundColor: '#111111', color: '#E8E8E8' }} className="min-h-screen">
       <Navbar />
@@ -191,12 +194,50 @@ export default function Home() {
             <p className="leading-relaxed mb-8" style={{ color: '#A0A0A0' }}>Open to roles in game development, systems engineering, and application development.</p>
             <a href="mailto:surajkarthikeyan@gmail.com" style={{ color: '#A0A0A0' }} className="text-sm hover:opacity-70 transition-opacity">surajkarthikeyan@gmail.com ↗</a>
           </div>
-          <form className="space-y-4">
-            <input type="text" placeholder="Your name" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
-            <input type="email" placeholder="Email address" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
-            <textarea placeholder="Message" rows={4} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none resize-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
-            <button type="submit" className="px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity" style={{ backgroundColor: '#E8E8E8', color: '#111111' }}>
-              Send message
+          <form
+            className="space-y-4"
+            onSubmit={async (e) => {
+              e.preventDefault()
+              setFormStatus('sending')
+              const form = e.target as HTMLFormElement
+              const name = (form.elements.namedItem('name') as HTMLInputElement).value
+              const email = (form.elements.namedItem('email') as HTMLInputElement).value
+              const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value
+
+              try {
+                const res = await fetch('/api/contact', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ name, email, message }),
+                })
+
+                if (res.ok) {
+                  setFormStatus('success')
+                  form.reset()
+                } else {
+                  setFormStatus('error')
+                }
+              } catch {
+                setFormStatus('error')
+              }
+            }}
+          >
+            <input name="name" type="text" placeholder="Your name" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
+            <input name="email" type="email" placeholder="Email address" className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
+            <textarea name="message" placeholder="Message" rows={4} className="w-full rounded-lg px-4 py-3 text-sm focus:outline-none resize-none" style={{ backgroundColor: '#1A1A1A', border: '1px solid #2A2A2A', color: '#E8E8E8' }} />
+            {formStatus === 'success' && (
+              <p className="text-sm" style={{ color: '#10B981' }}>Message sent! I'll get back to you soon.</p>
+            )}
+            {formStatus === 'error' && (
+              <p className="text-sm" style={{ color: '#E24B4A' }}>Something went wrong. Please try again or email directly.</p>
+            )}
+            <button
+              type="submit"
+              disabled={formStatus === 'sending'}
+              className="px-6 py-3 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: '#E8E8E8', color: '#111111', opacity: formStatus === 'sending' ? 0.6 : 1 }}
+            >
+              {formStatus === 'sending' ? 'Sending...' : 'Send message'}
             </button>
           </form>
         </div>

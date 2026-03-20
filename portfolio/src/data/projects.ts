@@ -140,5 +140,55 @@ export const projects: Project[] = [
       },
     ],
   },
+
+  {
+  id: 'stoma-vr',
+  title: 'STOMA VR',
+  subtitle: 'A VR medical simulation aimed at teaching new residents and students the differences between tracheostomies and laryngectomies through hands-on procedural practice.',
+  category: 'game',
+  tags: ['Unity', 'C#', 'VR', 'Simulation'],
+  role: 'Lead Programmer, Systems Engineer, Systems Integration',
+  teamSize: 8,
+  duration: '4 months',
+  engine: 'Unity',
+  itchLink: undefined,
+  steamLink: undefined,
+  githubLink: undefined,
+  overview: 'STOMA VR was developed over 4 months during the Summer of 2023 as a VR educational simulation for medical students. As Lead Programmer, I was responsible for the core interaction systems that allowed students to physically perform medical procedures in VR, as well as a state-based procedure system that tracked correctness and fed results back to supervising teachers.',
+  thumbnail: '/stoma-vr/MainPage.jpg',
+  heroBanner: '/stoma-vr/MainPage.jpg',
+  themeColor: {
+    accent: '#0D9488',
+    accentMuted: '#042F2E',
+    tag: '#042F2E',
+    tagText: '#0D9488',
+  },
+  contributions: [
+    {
+      title: 'Procedure system',
+      description: 'Responsible for the stage-change triggers within the two-part procedure system. Player actions — object collisions, object states — advanced the game state through each procedural step. Built in correctness tracking so supervising teachers could receive real-time feedback on student performance.',
+      images: [
+        '/stoma-vr/MainModule1Showcase.PNG',
+        '/stoma-vr/Module1Games.png',
+      ],
+    },
+    {
+      title: 'Player interaction system',
+      description: 'Designed and engineered the player interaction system using C# interfaces to detect and handle interactable objects in the scene. Using interfaces allowed for multiple inheritance, meaning any object could be made interactable with a consistent API while keeping individual implementations flexible.',
+      images: [
+        '/stoma-vr/PlayerHand.PNG',
+        '/stoma-vr/Patient3.PNG',
+      ],
+    },
+    {
+      title: 'Audio-animation system',
+      description: 'Built an audio event system on top of Unity\'s animation events, allowing audio clips to trigger at specific animation frames. Designed for extensibility — new SFX could be added with minimal additional code. Used throughout the simulation for procedural feedback, such as syncing audio to patient interaction animations.',
+      images: [
+        '/stoma-vr/AudioDictImage1.PNG',
+        '/stoma-vr/AudioDictImage2.PNG',
+      ],
+    },
+  ],
+},
 ]
 

@@ -1,22 +1,26 @@
 import { StrictMode, useState, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import './index.css'
 import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
 
-function LoadingScreen() {
-  const [visible, setVisible] = useState(true)
+function LoadingScreen({ show }: { show: boolean }) {
+  const [visible, setVisible] = useState(false)
   const [fading, setFading] = useState(false)
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFading(true), 400)
-    const hideTimer = setTimeout(() => setVisible(false), 900)
-    return () => {
-      clearTimeout(fadeTimer)
-      clearTimeout(hideTimer)
+    if (show) {
+      setVisible(true)
+      setFading(false)
+      const fadeTimer = setTimeout(() => setFading(true), 400)
+      const hideTimer = setTimeout(() => setVisible(false), 900)
+      return () => {
+        clearTimeout(fadeTimer)
+        clearTimeout(hideTimer)
+      }
     }
-  }, [])
+  }, [show])
 
   if (!visible) return null
 
@@ -45,8 +49,8 @@ function LoadingScreen() {
             top: 0, left: 0,
             height: '100%',
             backgroundColor: '#06B6D4',
-            animation: 'loadBar 0.6s ease forwards',
-            width: '0%',
+            animation: fading ? 'none' : 'loadBar 0.6s ease forwards',
+            width: fading ? '100%' : '0%',
           }} />
         </div>
       </div>
@@ -54,11 +58,26 @@ function LoadingScreen() {
   )
 }
 
+function RouteWatcher({ onRouteChange }: { onRouteChange: () => void }) {
+  const location = useLocation()
+
+  useEffect(() => {
+    onRouteChange()
+  }, [location.pathname])
+
+  return null
+}
+
 function App() {
+  const [loadKey, setLoadKey] = useState(0)
+
+  const triggerLoad = () => setLoadKey(k => k + 1)
+
   return (
     <StrictMode>
-      <LoadingScreen />
+      <LoadingScreen show={loadKey > 0} key={loadKey} />
       <BrowserRouter>
+        <RouteWatcher onRouteChange={triggerLoad} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />

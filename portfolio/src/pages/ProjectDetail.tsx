@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import Navbar from '../components/Navbar'
+import PDFViewer from '../components/PDFViewer'
 
 export default function ProjectDetail() {
   const { id } = useParams()
@@ -65,9 +66,9 @@ export default function ProjectDetail() {
               View source ↗
             </a>
           )}
-          {project.githubLink && (
-        <a href={project.githubLink} target="_blank" rel="noreferrer" style={{ color: '#A0A0A0', border: '1px solid #2A2A2A' }} className="px-6 py-3 rounded-lg text-sm hover:opacity-70 transition-opacity">
-            View source ↗
+          {project.id === 'object-matching-recognition' && (
+            <a href="/research/ObjectMatchingFinalReport.pdf" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0', border: '1px solid #2A2A2A' }} className="px-6 py-3 rounded-lg text-sm hover:opacity-70 transition-opacity">
+              View report ↗
             </a>
           )}
         </div>
@@ -129,17 +130,13 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-    {project.id === 'object-matching-recognition' && (
-      <section className="px-8 md:px-20 py-16" style={{ borderBottom: '1px solid #2A2A2A' }}>
-        <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>Research Paper</p>
-        <iframe
-          src="/research/ObjectMatchingFinalReport.pdf"
-          className="w-full rounded-xl"
-          style={{ height: '800px', border: '1px solid #2A2A2A' }}
-        />
-      </section>
-    )}
-
+      {/* Research Paper */}
+      {project.id === 'object-matching-recognition' && (
+        <section className="px-8 md:px-20 py-16" style={{ borderBottom: '1px solid #2A2A2A' }}>
+          <p className="text-sm uppercase tracking-widest mb-6" style={{ color: '#A0A0A0' }}>Research Paper</p>
+          <PDFViewer url="/research/ObjectMatchingFinalReport.pdf" />
+        </section>
+      )}
 
       {/* More projects */}
       <section className="px-8 md:px-20 py-16">

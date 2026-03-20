@@ -242,7 +242,21 @@ export default function Home() {
           </form>
         </div>
       </section>
-
+    {/* Footer */}
+    <footer className="px-8 md:px-20 py-12" style={{ borderTop: '1px solid #2A2A2A' }}>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p className="font-medium text-base" style={{ color: '#E8E8E8' }}>Suraj Karthikeyan</p>
+          <p className="text-sm mt-1" style={{ color: '#A0A0A0' }}>Software Engineer & Game Developer</p>
+        </div>
+        <div className="flex gap-8">
+          <a href="https://github.com/SurajKarthikeyan" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/suraj-karthikeyan-04baa0191/" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">LinkedIn ↗</a>
+          <a href="https://surajkarthikeyan.itch.io/" target="_blank" rel="noreferrer" style={{ color: '#A0A0A0' }} className="hover:opacity-70 text-sm transition-opacity">itch.io ↗</a>
+        </div>
+        <p className="text-sm" style={{ color: '#A0A0A0' }}>© 2026 Suraj Karthikeyan</p>
+      </div>
+    </footer>
     </div>
   )
 }

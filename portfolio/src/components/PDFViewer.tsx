@@ -10,7 +10,7 @@ export default function PDFViewer({ url }: { url: string }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <div style={{ background: '#1A1A1A', border: '1px solid #2A2A2A', borderRadius: '12px', padding: '2rem 2.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem' }}>
+      <div style={{ background: '#1A1A1A', border: '1px solid #2A2A2A', borderRadius: '12px', padding: '1.5rem' }} className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
           <div style={{ width: '48px', height: '60px', background: '#0d2a1a', border: '1px solid #10B981', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ export default function PDFViewer({ url }: { url: string }) {
             </div>
           </div>
         </div>
-        <a href={url} target="_blank" rel="noreferrer" style={{ background: '#10B981', color: '#022C22', fontSize: '13px', fontWeight: 500, padding: '10px 24px', borderRadius: '8px', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
+        <a href={url} target="_blank" rel="noreferrer" className="text-center md:text-left" style={{ background: '#10B981', color: '#022C22', fontSize: '13px', fontWeight: 500, padding: '10px 24px', borderRadius: '8px', textDecoration: 'none', display: 'block' }}>
           Download PDF ↗
         </a>
       </div>

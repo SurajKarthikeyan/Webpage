@@ -243,8 +243,8 @@ export const projects: Project[] = [
     steamLink: undefined,
     githubLink: undefined,
   overview: 'SimpleEQ is a fully featured parametric equalizer VST3 plugin built in C++ using the JUCE framework. It features a real-time frequency response display with draggable nodes, a three-band EQ with Low Cut, Peak, and High Cut filters, an FFT spectrum analyzer rendering behind the EQ curve, a custom dark studio-aesthetic UI built entirely from scratch using JUCE\'s graphics API with OpenGL-accelerated rendering, a preset system for saving and loading EQ settings, and full parameter state persistence across DAW sessions.',
-thumbnail: '/simple-eq/SimpleEQBanner.PNG',
-heroBanner: '/simple-eq/SimpleEQBanner.PNG',
+thumbnail: '/simple-eq/SimpleEQBanner.png',
+heroBanner: '/simple-eq/SimpleEQBanner.png',
     themeColor: {
       accent: '#4F6EF7',
       accentMuted: '#0F1540',

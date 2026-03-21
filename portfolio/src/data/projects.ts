@@ -232,7 +232,7 @@ export const projects: Project[] = [
   {
     id: 'simple-eq',
     title: 'SimpleEQ',
-    subtitle: 'A C++ equalizer plugin built in the JUCE framework, deployable as a VST3 inside any DAW including Reaper and Ableton.',
+  subtitle: 'A fully featured parametric equalizer VST3 plugin built in C++ using the JUCE framework, designed for professional audio production workflows.',
     category: 'solo',
     tags: ['C++', 'JUCE', 'VST3', 'Audio'],
     role: 'Solo Developer',
@@ -242,32 +242,37 @@ export const projects: Project[] = [
     itchLink: undefined,
     steamLink: undefined,
     githubLink: undefined,
-    overview: 'After working extensively with audio implementation in Unity games, I wanted to go deeper into audio engineering by building my own C++ plugin from scratch. SimpleEQ is a fully functional equalizer VST3 built in the JUCE framework, loadable inside any DAW. It implements high and low pass filters, adjustable attenuation slopes from 12 to 48 dB per octave, and a real-time gain filter — all controllable via sliders with live audio feedback.',
-    thumbnail: '/simple-eq/SimpleEQBanner.png',
-    heroBanner: '/simple-eq/SimpleEQBanner.png',
+  overview: 'SimpleEQ is a fully featured parametric equalizer VST3 plugin built in C++ using the JUCE framework. It features a real-time frequency response display with draggable nodes, a three-band EQ with Low Cut, Peak, and High Cut filters, an FFT spectrum analyzer rendering behind the EQ curve, a custom dark studio-aesthetic UI built entirely from scratch using JUCE\'s graphics API with OpenGL-accelerated rendering, a preset system for saving and loading EQ settings, and full parameter state persistence across DAW sessions.',
+thumbnail: '/simple-eq/SimpleEQBanner.PNG',
+heroBanner: '/simple-eq/SimpleEQBanner.PNG',
     themeColor: {
       accent: '#4F6EF7',
       accentMuted: '#0F1540',
       tag: '#0F1540',
       tagText: '#4F6EF7',
     },
-    contributions: [
-      {
-        title: 'Pass filters & attenuation',
-        description: 'Implemented high and low pass filters that attenuate frequencies above or below the slider mark. Used together they create a band pass filter. The attenuation slope is adjustable between 12 and 48 dB per octave, giving precise control over how aggressively frequencies are cut.',
-        images: [
-          '/simple-eq/ReaperBackgroundShot.PNG',
-          '/simple-eq/image.png',
-        ],
-      },
-      {
-        title: 'Gain filter',
-        description: 'Built a real-time gain filter that modifies the amplitude of the audio signal by multiplying each buffer sample by a gain coefficient derived from the slider value. The modified samples replace the buffer before playback, allowing for live gain adjustments with no latency.',
-        images: [
-          '/simple-eq/FilterGraphImage.PNG',
-        ],
-      },
+contributions: [
+  {
+    title: 'Frequency response display & draggable nodes',
+    description: 'Built a real-time visualization of the EQ curve across the full 20Hz–20kHz spectrum that updates instantly as parameters change. Implemented draggable nodes directly on the curve so users can manipulate each band visually without touching the sliders.',
+    images: [
+      '/simple-eq/SimpleEQGif1.gif',
+      '/simple-eq/SimpleEQImage1.PNG',
     ],
+  },
+  {
+    title: 'Three-band EQ & FFT spectrum analyzer',
+    description: 'Implemented Low Cut, Peak, and High Cut filters with independent bypass controls. Low and High Cut bands support four slope options (12, 24, 36, 48 dB/oct). Built a real-time FFT spectrum analyzer that renders behind the EQ curve for immediate visual feedback on how the filters affect the incoming audio.',
+    images: [
+      '/simple-eq/SimpleEQGif2.gif',
+    ],
+  },
+  {
+    title: 'Custom UI, preset system & state saving',
+    description: 'Designed a dark studio-aesthetic interface entirely from scratch using JUCE\'s graphics API, with colour-coded bands, OpenGL-accelerated rendering, and smooth 60fps animations. Added a preset system for saving and loading custom EQ settings to disk, and full parameter state persistence across DAW sessions.',
+    images: [],
+  },
+],
   },
 
   {

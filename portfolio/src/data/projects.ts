@@ -267,11 +267,14 @@ contributions: [
       '/simple-eq/SimpleEQGif2.gif',
     ],
   },
-  {
-    title: 'Custom UI, preset system & state saving',
-    description: 'Designed a dark studio-aesthetic interface entirely from scratch using JUCE\'s graphics API, with colour-coded bands, OpenGL-accelerated rendering, and smooth 60fps animations. Added a preset system for saving and loading custom EQ settings to disk, and full parameter state persistence across DAW sessions.',
-    images: [],
-  },
+{
+  title: 'Custom UI, preset system & state saving',
+  description: 'Designed a dark studio-aesthetic interface entirely from scratch using JUCE\'s graphics API, with colour-coded bands, OpenGL-accelerated rendering, and smooth 60fps animations. Added a preset system for saving and loading custom EQ settings to disk, and full parameter state persistence across DAW sessions.',
+  images: [
+    '/simple-eq/SimpleEQImage2.PNG',
+    '/simple-eq/SimpleEQImage3.PNG',
+  ],
+},
 ],
   },
 
